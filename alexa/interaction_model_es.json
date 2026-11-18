@@ -1,0 +1,40 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mi impresora",
+      "intents": [
+        {"name": "AMAZON.StopIntent", "samples": []},
+        {"name": "AMAZON.CancelIntent", "samples": []},
+        {"name": "AMAZON.HelpIntent", "samples": []},
+        {"name": "AMAZON.YesIntent", "samples": []},
+        {"name": "AMAZON.NoIntent", "samples": []},
+        {"name": "EstadoIntent", "samples": [
+          "estado", "como va la impresion", "como va", "cuanto falta", "que esta haciendo"]},
+        {"name": "TemperaturaIntent", "samples": [
+          "temperaturas", "que temperatura tiene", "como esta de temperatura",
+          "temperatura del hotend", "temperatura de la cama"]},
+        {"name": "PrecalentarIntent",
+         "slots": [
+           {"name": "material", "type": "MATERIAL"},
+           {"name": "hotend", "type": "AMAZON.NUMBER"},
+           {"name": "cama", "type": "AMAZON.NUMBER"}],
+         "samples": [
+           "precalienta", "precalienta para {material}", "precalienta {material}",
+           "calienta para {material}",
+           "precalienta el hotend a {hotend} grados",
+           "precalienta la cama a {cama} grados",
+           "precalienta hotend a {hotend} y cama a {cama}"]},
+        {"name": "EnfriarIntent", "samples": ["enfria", "apaga los calentadores", "enfria la impresora"]},
+        {"name": "HomeIntent", "samples": ["haz home", "lleva a home", "home de los ejes"]},
+        {"name": "PausarIntent", "samples": ["pausa", "pausa la impresion", "pausar"]},
+        {"name": "ReanudarIntent", "samples": ["reanuda", "reanuda la impresion", "continua"]},
+        {"name": "CancelarImpresionIntent", "samples": ["cancela la impresion", "aborta la impresion"]}
+      ],
+      "types": [
+        {"name": "MATERIAL", "values": [
+          {"name": {"value": "pla"}}, {"name": {"value": "petg"}}, {"name": {"value": "abs"}},
+          {"name": {"value": "asa"}}, {"name": {"value": "tpu"}}]}
+      ]
+    }
+  }
+}
